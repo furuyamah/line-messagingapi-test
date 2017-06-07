@@ -21,7 +21,7 @@ if($type != "text"){
 if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こちらの〇〇はいかがですか？",
+    "altText" => "こちらの〇〇はいかがですか？?",
     "template" => [
       "type" => "buttons",
       "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
