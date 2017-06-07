@@ -75,29 +75,28 @@ if ($text == 'はい') {
         "altText" => "候補を３つご案内しています。",
         "template" => [
             "type" => "carousel",
-            "columns" => [
-                [
-                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
-                    "title" => "●●レストラン",
-                    "text" => "こちらにしますか？",
-                    "actions" => [
-                        [
-                            "type" => "postback",
-                            "label" => "予約する",
-                            "data" => "action=rsv&itemid=111"
-                        ],
-                        [
-                            "type" => "postback",
-                            "label" => "電話する",
-                            "data" => "action=pcall&itemid=111"
-                        ],
-                        [
-                            "type" => "uri",
-                            "label" => "詳しく見る（ブラウザ起動）",
-                            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-                        ]
+            "columns" => [[
+                "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
+                "title" => "●●レストラン",
+                "text" => "こちらにしますか？",
+                "actions" => [
+                    [
+                        "type" => "postback",
+                        "label" => "予約する",
+                        "data" => "action=rsv&itemid=111"
+                    ],
+                    [
+                        "type" => "postback",
+                        "label" => "電話する",
+                        "data" => "action=pcall&itemid=111"
+                    ],
+                    [
+                        "type" => "uri",
+                        "label" => "詳しく見る（ブラウザ起動）",
+                        "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
                     ]
-                ],
+                ]
+            ],
                 [
                     "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
                     "title" => "▲▲レストラン",
@@ -168,4 +167,4 @@ if ($text == 'はい') {
     ];
 }
 
-sendMessage($replyToken, $response_format_text, $accessToken);
+sendMessage($response_format_text);
