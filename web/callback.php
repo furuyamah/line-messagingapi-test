@@ -17,7 +17,7 @@ if($type != "text"){
 	exit;
 }
 
-error_log("test furu.");
+error_log(print_r($jsonObj,true));
 
 //返信データ作成
 if ($text == 'はい') {
