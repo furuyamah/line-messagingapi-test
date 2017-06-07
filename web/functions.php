@@ -57,3 +57,12 @@ function buildPlainTextMessage($message)
 
     return $response_format_text;
 }
+
+function getTaitokuTenki()
+{
+    $json_data = file_get_contents('http://api.openweathermap.org/data/2.5/weather?lat=35.715137&lon=139.776329');
+    $data = json_decode($json_data);
+
+    return 'お天気は「' . $data->weather[0]->description . '」らしいです。';
+
+}

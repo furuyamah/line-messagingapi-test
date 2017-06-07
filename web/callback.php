@@ -27,7 +27,7 @@ $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 
 
 if (isHello($text)) {
-    $response = buildPlainTextMessage("こんちは！");
+    $response = buildPlainTextMessage(getTaitokuTenki());
     sendMessage($response);
     exit;
 }
