@@ -11,8 +11,11 @@
  * @param $response_format_text
  * @param $accessToken
  */
-function sendMessage($replyToken, $response_format_text, $accessToken)
+function sendMessage($response_format_text)
 {
+    global $replyToken;
+    global $accessToken;
+
     $post_data = [
         "replyToken" => $replyToken,
         "messages" => [$response_format_text]
@@ -27,6 +30,30 @@ function sendMessage($replyToken, $response_format_text, $accessToken)
         'Content-Type: application/json; charser=UTF-8',
         'Authorization: Bearer ' . $accessToken
     ));
-    $result = curl_exec($ch);
+    curl_exec($ch);
     curl_close($ch);
+}
+
+
+function isHello($message)
+{
+    switch ($message) {
+        case "こんにちは":
+        case "こんばんは":
+        case "おはよう":
+        case "hello":
+            return true;
+    }
+
+    return false;
+}
+
+function buildPlainTextMessage($message)
+{
+    $response_format_text = [
+        "type" => "text",
+        "text" => $message,
+    ];
+
+    return $response_format_text;
 }

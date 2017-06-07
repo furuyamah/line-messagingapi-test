@@ -2,11 +2,19 @@
 require_once "functions.php";
 
 $accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
-
+if (empty($accessToken)) {
+    exit;
+}
 
 //get message from user.
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
+
+// get reply token
+$replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
+if (empty($replyToken)) {
+    exit;
+}
 
 $type = $jsonObj->{"events"}[0]->{"message"}->{"type"};
 if ($type != "text") {
@@ -14,12 +22,15 @@ if ($type != "text") {
     exit;
 }
 
-
 // get text message.
 $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 
-// get reply token
-$replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
+
+if (isHello($text)) {
+    $response = buildPlainTextMessage("こんちは！");
+    sendMessage($response);
+    exit;
+}
 
 
 //返信データ作成
