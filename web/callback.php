@@ -17,6 +17,8 @@ if($type != "text"){
 	exit;
 }
 
+error_log("test furu.");
+
 //返信データ作成
 if ($text == 'はい') {
   $response_format_text = [
