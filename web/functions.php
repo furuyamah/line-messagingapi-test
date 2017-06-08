@@ -136,6 +136,7 @@ function buildPartner1()
 
 function buildPartner234()
 {
+    error_log("koko:furu?");
     $response_format_text = [
         "type" => "template",
         "altText" => "候補を３人ご案内しています。",
@@ -205,17 +206,13 @@ function buildPartner234()
                             "type" => "uri",
                             "label" => "詳しく見る（ブラウザ起動）",
                             "uri" => "https://blog.isao.co.jp/author/furuyamah/"
-                        ],
-                        [
-                            "type" => "message",
-                            "label" => "最初のひと",
-                            "text" => "やっぱり最初の人お願い"
                         ]
                     ]
                 ]
             ]
         ]
     ];
+    error_log("koko:furu2");
 
     return $response_format_text;
 }
