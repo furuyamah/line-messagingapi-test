@@ -40,6 +40,8 @@ if ($text == 'はい') {
     exit;
 } else if ($text == '違うやつお願い') {
     $response_format_text = buildPartner234();
+} else if ($text == '他の人') {
+    $response_format_text = buildPartner1();
 } else {
     $response_format_text = buildInitialMessage();
 }
