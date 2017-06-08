@@ -94,3 +94,41 @@ function buildInitialMessage()
     return $response_format_text;
 
 }
+
+function buildPartner1(){
+    $response_format_text = [
+        "type" => "template",
+        "altText" => "反権威主義",
+        "template" => [
+            "type" => "buttons",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/keiji.png",
+            "title" => "中村圭志",
+            "text" => "私にご相談ください",
+            "actions" => [
+                [
+                    "type" => "postback",
+                    "label" => "電話する",
+                    "data" => "action=buy&itemid=123"
+                ],
+                [
+                    "type" => "postback",
+                    "label" => "チャットする",
+                    "data" => "action=pcall&itemid=123"
+                ],
+                [
+                    "type" => "uri",
+                    "label" => "詳しく見る",
+                    "uri" => "https://blog.isao.co.jp/author/nakamurak/"
+                ],
+                [
+                    "type" => "message",
+                    "label" => "違うやつ",
+                    "text" => "違うやつお願い"
+                ]
+            ]
+        ]
+    ];
+
+    return $response_format_text;
+
+}
