@@ -314,7 +314,6 @@ function chat($message)
 
     $response = [
         "type" => "message",
-        "label" => $reply,
         "text" => $reply
     ];
 
