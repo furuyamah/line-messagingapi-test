@@ -111,7 +111,7 @@ function buildPartner1()
                 [
                     "type" => "message",
                     "label" => "チャットする",
-                    "data" => "オープン信者の率先垂範リーダーとチャットする"
+                    "text" => "オープン信者の率先垂範リーダーとチャットする"
                 ],
                 [
                     "type" => "postback",
