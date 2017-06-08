@@ -107,9 +107,9 @@ function buildPartner1()
             "text" => "私にご相談ください",
             "actions" => [
                 [
-                    "type" => "postback",
+                    "type" => "message",
                     "label" => "チャットする",
-                    "data" => "action=buy&itemid=123"
+                    "data" => "オープン信者の率先垂範リーダーとチャットする"
                 ],
                 [
                     "type" => "postback",
