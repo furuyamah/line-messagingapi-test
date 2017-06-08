@@ -6,6 +6,9 @@ if (empty($accessToken)) {
     exit;
 }
 
+$zatsudanApiKey = getenv('DOCOMO_ZATSUDAN_API_KEY');
+error_log("API:".$zatsudanApiKey);
+
 //get message from user.
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
