@@ -143,27 +143,27 @@ function buildPartner234()
             "type" => "carousel",
             "columns" => [
                 [
-                "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/aimi.png",
-                "title" => "時代をエグる元赤文字系読モディレクター",
-                "text" => "こちらにしますか？",
-                "actions" => [
-                    [
-                        "type" => "postback",
-                        "label" => "チャットする",
-                        "data" => "action=rsv&itemid=111"
-                    ],
-                    [
-                        "type" => "postback",
-                        "label" => "電話する",
-                        "data" => "action=pcall&itemid=111"
-                    ],
-                    [
-                        "type" => "uri",
-                        "label" => "詳しく見る（ブラウザ起動）",
-                        "uri" => "https://blog.isao.co.jp/author/nakajimaa/"
+                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/aimi.png",
+                    "title" => "時代をエグる元赤文字系読モディレクター",
+                    "text" => "こちらにしますか？",
+                    "actions" => [
+                        [
+                            "type" => "postback",
+                            "label" => "チャットする",
+                            "data" => "action=rsv&itemid=111"
+                        ],
+                        [
+                            "type" => "postback",
+                            "label" => "電話する",
+                            "data" => "action=pcall&itemid=111"
+                        ],
+                        [
+                            "type" => "uri",
+                            "label" => "詳しく見る（ブラウザ起動）",
+                            "uri" => "https://blog.isao.co.jp/author/nakajimaa/"
+                        ]
                     ]
-                ]
-            ],
+                ],
                 [
                     "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/toshiki.png",
                     "title" => "小難しく語らない熱狂的グロースハッカー",
@@ -207,10 +207,10 @@ function buildPartner234()
                             "uri" => "https://blog.isao.co.jp/author/furuyamah/"
                         ],
                         [
-                        "type" => "message",
-                        "label" => "最初のひと",
-                        "text" => "やっぱり最初の人お願い"
-                    ]
+                            "type" => "message",
+                            "label" => "最初のひと",
+                            "text" => "やっぱり最初の人お願い"
+                        ]
                     ]
                 ]
             ]
