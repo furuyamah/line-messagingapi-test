@@ -26,13 +26,6 @@ if ($type != "text") {
 $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 
 
-if (isHello($text)) {
-    $response = buildPlainTextMessage(getTaitokuTenki());
-    sendMessage($response);
-    exit;
-}
-
-
 //返信データ作成
 if ($text == 'はい') {
     $response_format_text = buildPartner1();
