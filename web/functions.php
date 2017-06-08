@@ -30,8 +30,10 @@ function sendMessage($response_format_text)
         'Content-Type: application/json; charser=UTF-8',
         'Authorization: Bearer ' . $accessToken
     ));
-    curl_exec($ch);
+    $res = curl_exec($ch);
     curl_close($ch);
+
+    error_log("res:" . print_r($res, true));
 }
 
 
