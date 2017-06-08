@@ -284,3 +284,32 @@ function buildPartner234()
 
     return $response_format_text;
 }
+
+
+function chat($message) {
+    global $zatsudanApiKey;
+
+    $api_url = sprintf('https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue?APIKEY=%s', $zatsudanApiKey);
+    $req_body = array(
+        'utt' => $message,
+    );
+//    'context' => $context,
+//    $req_body['context'] = $message;
+
+    $headers = array(
+        'Content-Type: application/json; charset=UTF-8',
+    );
+    $options = array(
+        'http'=>array(
+            'method'  => 'POST',
+            'header'  => implode("\r\n", $headers),
+            'content' => json_encode($req_body),
+        )
+    );
+    $stream = stream_context_create($options);
+    $res = json_decode(file_get_contents($api_url, false, $stream));
+
+    error_log("DOCOMO:".print_r($res,true));
+
+    return $res->utt;
+}

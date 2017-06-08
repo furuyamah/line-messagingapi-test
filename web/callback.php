@@ -7,7 +7,6 @@ if (empty($accessToken)) {
 }
 
 $zatsudanApiKey = getenv('DOCOMO_ZATSUDAN_API_KEY');
-error_log("API:".$zatsudanApiKey);
 
 //get message from user.
 $json_string = file_get_contents('php://input');
@@ -42,8 +41,10 @@ if ($text == 'はい') {
     $response_format_text = taikaiQuestion();
 } else if ($text ==  "退会したのに課金される" ){
     $response_format_text = taikaiQuestion2();
-} else {
+} else if (isHello($text)){
     $response_format_text = buildInitialMessage();
+} else {
+    $response_format_text = chat($text);
 }
 
 sendMessage($response_format_text);
