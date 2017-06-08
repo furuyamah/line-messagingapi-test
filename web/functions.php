@@ -96,6 +96,40 @@ function buildInitialMessage()
     return $response_format_text;
 
 }
+function taikaiQuestion()
+{
+    $response_format_text = [
+        "type" => "template",
+        "altText" => "反権威主義",
+        "template" => [
+            "type" => "buttons",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/keiji.png",
+            "title" => "反権威主義！オープン信者の率先垂範リーダー",
+            "text" => "どうされましたか？",
+            "actions" => [
+                [
+                    "type" => "message",
+                    "label" => "退会の仕方がわからない",
+                    "text" => "退会の仕方がわからない",
+                ],
+                [
+                    "type" => "message",
+                    "label" => "退会したのに課金されている",
+                    "text" => "退会したのに課金されている",
+                ],
+                [
+                    "type" => "message",
+                    "label" => "違うやつ",
+                    "text" => "違うやつお願い"
+                ]
+            ]
+        ]
+    ];
+    error_log("call partner1.");
+
+    return $response_format_text;
+
+}
 
 function buildPartner1()
 {

@@ -28,15 +28,15 @@ $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 
 //返信データ作成
 if ($text == 'はい') {
-    error_log("yes.");
     $response_format_text = buildPartner1();
 } else if ($text == 'いいえ') {
-    error_log("no.");
     exit;
 } else if ($text == '違うやつお願い') {
     $response_format_text = buildPartner234();
 } else if ($text == '他の人') {
     $response_format_text = buildPartner1();
+} else if ($text == "オープン信者の率先垂範リーダーとチャットする") {
+    $response_format_text = taikaiQuestion();
 } else {
     $response_format_text = buildInitialMessage();
 }
