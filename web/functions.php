@@ -313,7 +313,7 @@ function chat($message)
     $reply = $res->utt;
 
     $response = [
-        "type" => "message",
+        "type" => "text",
         "text" => $reply
     ];
 
