@@ -96,6 +96,37 @@ function buildInitialMessage()
     return $response_format_text;
 
 }
+
+function taikaiQuestion2()
+{
+    $response_format_text = [
+        "type" => "template",
+        "altText" => "反権威主義",
+        "template" => [
+            "type" => "buttons",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/keiji.png",
+            "title" => "反権威主義！オープン信者の率先垂範リーダー",
+            "text" => "退会が完了していないと思われます。こちらをお試しください。",
+            "actions" => [
+                [
+                    "type" => "uri",
+                    "label" => "退会の仕方を詳しく見る",
+                    "uri" => "http://mfplus.jp/user/user_del01.php"
+                ],
+                [
+                    "type" => "message",
+                    "label" => "違うやつ",
+                    "text" => "違うやつお願い"
+                ]
+            ]
+        ]
+    ];
+    error_log("call partner1.");
+
+    return $response_format_text;
+
+}
+
 function taikaiQuestion()
 {
     $response_format_text = [
@@ -114,8 +145,8 @@ function taikaiQuestion()
                 ],
                 [
                     "type" => "message",
-                    "label" => "退会したのに課金されている",
-                    "text" => "退会したのに課金されている",
+                    "label" => "退会したのに課金される",
+                    "text" => "退会したのに課金される",
                 ],
                 [
                     "type" => "message",

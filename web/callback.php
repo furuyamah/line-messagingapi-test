@@ -37,6 +37,8 @@ if ($text == 'はい') {
     $response_format_text = buildPartner1();
 } else if ($text == "オープン信者の率先垂範リーダーとチャットする") {
     $response_format_text = taikaiQuestion();
+} else if ($text ==  "退会したのに課金される" ){
+
 } else {
     $response_format_text = buildInitialMessage();
 }
