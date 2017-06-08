@@ -95,14 +95,15 @@ function buildInitialMessage()
 
 }
 
-function buildPartner1(){
+function buildPartner1()
+{
     $response_format_text = [
         "type" => "template",
         "altText" => "反権威主義",
         "template" => [
             "type" => "buttons",
             "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/keiji.png",
-            "title" => "中村圭志",
+            "title" => "反権威主義！オープン信者の率先垂範リーダー",
             "text" => "私にご相談ください",
             "actions" => [
                 [
@@ -131,4 +132,85 @@ function buildPartner1(){
 
     return $response_format_text;
 
+}
+
+function buildPartner234()
+{
+    $response_format_text = [
+        "type" => "template",
+        "altText" => "候補を３つご案内しています。",
+        "template" => [
+            "type" => "carousel",
+            "columns" => [
+                [
+                "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
+                "title" => "●●レストラン",
+                "text" => "こちらにしますか？",
+                "actions" => [
+                    [
+                        "type" => "postback",
+                        "label" => "予約する",
+                        "data" => "action=rsv&itemid=111"
+                    ],
+                    [
+                        "type" => "postback",
+                        "label" => "電話する",
+                        "data" => "action=pcall&itemid=111"
+                    ],
+                    [
+                        "type" => "uri",
+                        "label" => "詳しく見る（ブラウザ起動）",
+                        "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                    ]
+                ]
+            ],
+                [
+                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
+                    "title" => "▲▲レストラン",
+                    "text" => "それともこちら？（２つ目）",
+                    "actions" => [
+                        [
+                            "type" => "postback",
+                            "label" => "予約する",
+                            "data" => "action=rsv&itemid=222"
+                        ],
+                        [
+                            "type" => "postback",
+                            "label" => "電話する",
+                            "data" => "action=pcall&itemid=222"
+                        ],
+                        [
+                            "type" => "uri",
+                            "label" => "詳しく見る（ブラウザ起動）",
+                            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                        ]
+                    ]
+                ],
+                [
+                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
+                    "title" => "■■レストラン",
+                    "text" => "はたまたこちら？（３つ目）",
+                    "actions" => [
+                        [
+                            "type" => "postback",
+                            "label" => "予約する",
+                            "data" => "action=rsv&itemid=333"
+                        ],
+                        [
+                            "type" => "postback",
+                            "label" => "電話する",
+                            "data" => "action=pcall&itemid=333"
+                        ],
+                        [
+                            "type" => "uri",
+                            "label" => "詳しく見る（ブラウザ起動）",
+                            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ];
+
+    return $response_format_text;
 }
