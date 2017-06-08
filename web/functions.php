@@ -160,7 +160,7 @@ function buildPartner234()
                     [
                         "type" => "uri",
                         "label" => "詳しく見る（ブラウザ起動）",
-                        "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                        "uri" => "https://blog.isao.co.jp/author/nakajimaa/"
                     ]
                 ]
             ],
@@ -182,7 +182,7 @@ function buildPartner234()
                         [
                             "type" => "uri",
                             "label" => "詳しく見る（ブラウザ起動）",
-                            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                            "uri" => "https://www.wantedly.com/projects/10137/staffings/34172#/_=_"
                         ]
                     ]
                 ],
@@ -193,7 +193,7 @@ function buildPartner234()
                     "actions" => [
                         [
                             "type" => "postback",
-                            "label" => "予約する",
+                            "label" => "チャットする",
                             "data" => "action=rsv&itemid=333"
                         ],
                         [
@@ -204,8 +204,13 @@ function buildPartner234()
                         [
                             "type" => "uri",
                             "label" => "詳しく見る（ブラウザ起動）",
-                            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-                        ]
+                            "uri" => "https://blog.isao.co.jp/author/furuyamah/"
+                        ],
+                        [
+                        "type" => "message",
+                        "label" => "最初のひと",
+                        "text" => "やっぱり最初の人お願い"
+                    ]
                     ]
                 ]
             ]
