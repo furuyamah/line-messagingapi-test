@@ -204,7 +204,6 @@ function buildPartner1()
 
 function buildPartner234()
 {
-    error_log("koko:furu?");
     $response_format_text = [
         "type" => "template",
         "altText" => "候補を３人ご案内しています。",
@@ -280,36 +279,44 @@ function buildPartner234()
             ]
         ]
     ];
-    error_log("koko:furu2");
 
     return $response_format_text;
 }
 
 
-function chat($message) {
+function chat($message)
+{
     global $zatsudanApiKey;
+    $CONTEXT = 'YW0BvVaXeHRO-ttlx847XQ';
 
     $api_url = sprintf('https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue?APIKEY=%s', $zatsudanApiKey);
     $req_body = array(
         'utt' => $message,
+        'context' => $CONTEXT,
     );
-//    'context' => $context,
-//    $req_body['context'] = $message;
 
     $headers = array(
         'Content-Type: application/json; charset=UTF-8',
     );
     $options = array(
-        'http'=>array(
-            'method'  => 'POST',
-            'header'  => implode("\r\n", $headers),
+        'http' => array(
+            'method' => 'POST',
+            'header' => implode("\r\n", $headers),
             'content' => json_encode($req_body),
         )
     );
     $stream = stream_context_create($options);
     $res = json_decode(file_get_contents($api_url, false, $stream));
 
-    error_log("DOCOMO:".print_r($res,true));
+    error_log("DOCOMO:" . print_r($res, true));
 
-    return $res->utt;
+    $reply = $res->utt;
+
+    $response = [
+        "type" => "message",
+        "label" => $reply,
+        "text" => $reply
+    ];
+
+    return $response;
 }
