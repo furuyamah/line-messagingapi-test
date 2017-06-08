@@ -129,6 +129,7 @@ function buildPartner1()
             ]
         ]
     ];
+    error_log("call partner1.");
 
     return $response_format_text;
 
