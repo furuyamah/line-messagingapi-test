@@ -60,9 +60,37 @@ function buildPlainTextMessage($message)
 
 function getTaitokuTenki()
 {
-    $json_data = file_get_contents('http://api.openweathermap.org/data/2.5/weather?lat=33.593505&lon=130.400995');
+    $json_data = file_get_contents(' api.openweathermap.org/data/2.5/find?q=London');
     $data = json_decode($json_data);
 
+    // apiの使用法がかわったらしくだめ
     return 'お天気は「' . $data->weather[0]->description . '」らしいです。';
+
+}
+
+function buildInitialMessage()
+{
+    $response_format_text = [
+        "type" => "template",
+        "altText" => "こんにちわ 何かご用ですか？（はい／いいえ）",
+        "template" => [
+            "type" => "confirm",
+            "text" => "こんにちわ 何かご用ですか？",
+            "actions" => [
+                [
+                    "type" => "message",
+                    "label" => "はい",
+                    "text" => "はい"
+                ],
+                [
+                    "type" => "message",
+                    "label" => "いいえ",
+                    "text" => "いいえ"
+                ]
+            ]
+        ]
+    ];
+
+    return $response_format_text;
 
 }
