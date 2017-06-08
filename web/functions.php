@@ -108,12 +108,12 @@ function buildPartner1()
             "actions" => [
                 [
                     "type" => "postback",
-                    "label" => "電話する",
+                    "label" => "チャットする",
                     "data" => "action=buy&itemid=123"
                 ],
                 [
                     "type" => "postback",
-                    "label" => "チャットする",
+                    "label" => "電話する",
                     "data" => "action=pcall&itemid=123"
                 ],
                 [
@@ -138,18 +138,18 @@ function buildPartner234()
 {
     $response_format_text = [
         "type" => "template",
-        "altText" => "候補を３つご案内しています。",
+        "altText" => "候補を３人ご案内しています。",
         "template" => [
             "type" => "carousel",
             "columns" => [
                 [
-                "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
-                "title" => "●●レストラン",
+                "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/aimi.png",
+                "title" => "時代をエグる元赤文字系読モディレクター",
                 "text" => "こちらにしますか？",
                 "actions" => [
                     [
                         "type" => "postback",
-                        "label" => "予約する",
+                        "label" => "チャットする",
                         "data" => "action=rsv&itemid=111"
                     ],
                     [
@@ -165,13 +165,13 @@ function buildPartner234()
                 ]
             ],
                 [
-                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
-                    "title" => "▲▲レストラン",
-                    "text" => "それともこちら？（２つ目）",
+                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/toshiki.png",
+                    "title" => "小難しく語らない熱狂的グロースハッカー",
+                    "text" => "それともこちら？（２人目）",
                     "actions" => [
                         [
                             "type" => "postback",
-                            "label" => "予約する",
+                            "label" => "チャットする",
                             "data" => "action=rsv&itemid=222"
                         ],
                         [
@@ -187,9 +187,9 @@ function buildPartner234()
                     ]
                 ],
                 [
-                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
-                    "title" => "■■レストラン",
-                    "text" => "はたまたこちら？（３つ目）",
+                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/hiroshi.png",
+                    "title" => "自転車は恋人妻は妻育児系プログラマー",
+                    "text" => "はたまたこちら？（３人目）",
                     "actions" => [
                         [
                             "type" => "postback",
